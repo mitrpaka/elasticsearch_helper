@@ -87,6 +87,8 @@ class QueueWorkerTest extends KernelTestBase {
     $queue_worker->processItem($item->data);
     $queue->deleteItem($item);
 
+    sleep(1);
+
     // Check number of items in the queue.
     $this->assertEquals(0, $queue->numberOfItems());
 
